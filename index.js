@@ -90,13 +90,12 @@ client.on('error', error => {
     console.error('❌ Discord client error:', error);
 });
 
-const PORT = process.env.PORT;
+const PORT = 3000;
 
-if (PORT) {
-    server.listen(PORT, () => {
-        console.log(`🌐 HTTP server on ${PORT}`);
-    });
-}
+server.listen(PORT, () => {
+    console.log(`🌐 HTTP server forced on ${PORT}`);
+});
+
 
 
 const server = http.createServer((req, res) => {
