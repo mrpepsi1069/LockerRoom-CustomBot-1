@@ -107,14 +107,8 @@ const server = http.createServer((req, res) => {
     }
 
     const url = req.url;
-    // Serve website
-    if (req.url === '/' || req.url === '/index.html') {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(fs.readFileSync('./lockerroom-website.html', 'utf8'));
-        return;
-    }
-    // Root endpoint - Basic stats
-    if (url === '/' || url === '/api/stats') {
+   // Root endpoint - Basic stats
+    if (url === '/api/stats') {
         const stats = {
             status: 'online',
             bot: client.user?.tag || 'Starting',
@@ -127,6 +121,7 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify(stats, null, 2));
         return;
     }
+
 
     // Guild list endpoint (public - shows basic info)
     if (url === '/api/guilds') {
