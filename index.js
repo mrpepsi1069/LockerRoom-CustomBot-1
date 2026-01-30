@@ -91,10 +91,13 @@ client.on('error', error => {
 });
 
 const PORT = process.env.PORT;
-if (!PORT) {
-    console.error('❌ PORT not provided by host');
-    process.exit(1);
+
+if (PORT) {
+    server.listen(PORT, () => {
+        console.log(`🌐 HTTP server on ${PORT}`);
+    });
 }
+
 
 const server = http.createServer((req, res) => {
     // Set CORS headers
