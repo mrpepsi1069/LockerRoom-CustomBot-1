@@ -13,13 +13,6 @@ module.exports = {
                 .setRequired(true)),
     
     async execute(interaction) {
-        // DISABLED COMMAND
-        return interaction.reply({
-            embeds: [errorEmbed('Command Disabled', 'This command has been disabled.')],
-            ephemeral: true
-        });
-
-        /*
         // Check if owner
         if (!await isOwner(interaction.user.id)) {
             return interaction.reply({
