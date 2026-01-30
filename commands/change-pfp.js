@@ -37,6 +37,5 @@ module.exports = {
                 ephemeral: true
             });
         }
-        */
     }
 };
